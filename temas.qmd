@@ -1,0 +1,12 @@
+---
+title: "Temas"
+listing:
+  contents: temas
+  sort: "date desc"
+  type: default
+  categories: true
+  fields: [date, title, description, categories]
+page-layout: full
+---
+
+Explicaciones de machine learning, IA, física, matemáticas y probabilidad. Usa las categorías para filtrar por área.

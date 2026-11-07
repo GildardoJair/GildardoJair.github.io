@@ -1,0 +1,20 @@
+---
+title: "Proyectos"
+---
+
+Cada proyecto sigue la misma estructura: **problema**, **método**, **resultado** y **enlaces**.
+
+<!--
+EDITA: copia este bloque debajo de esta nota por cada proyecto y quita los marcadores
+de comentario. Pocos y bien explicados valen más que muchos sin contexto.
+
+## Título descriptivo del proyecto
+
+**Problema.** ¿Qué pregunta o necesidad querías resolver? Una o dos frases.
+
+**Método.** ¿Qué datos usaste y qué técnicas aplicaste? Por ejemplo: limpieza con pandas, un modelo de regresión, validación cruzada.
+
+**Resultado.** ¿Qué encontraste? Incluye una gráfica o una métrica concreta.
+
+**Enlaces.** [Repositorio](https://github.com/GildardoJair/nombre-del-repo) · [Notebook](url-del-notebook)
+-->

@@ -1,0 +1,11 @@
+---
+title: "Investigaciones"
+bibliography: referencias.bib
+nocite: |
+  @*
+---
+
+Mis artículos científicos, publicados y en preparación. La lista se genera sola desde el archivo `referencias.bib`.
+
+::: {#refs}
+:::

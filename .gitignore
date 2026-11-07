@@ -1,0 +1,23 @@
+# Sitio construido (lo genera Quarto / GitHub Actions)
+_site/
+.quarto/
+
+# NO ignorar _freeze/: guarda los resultados de tus notebooks ya ejecutados
+
+# Secretos: nunca los subas
+.env
+*.key
+*.pem
+secrets*
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+
+/.quarto/
+**/*.quarto_ipynb

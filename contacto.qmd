@@ -1,0 +1,12 @@
+---
+title: "Contacto"
+toc: false
+---
+
+Si quieres conversar sobre un proyecto, una colaboración o una duda, aquí me encuentras:
+
+- **GitHub**: [github.com/GildardoJair](https://github.com/GildardoJair)
+- **LinkedIn**: [linkedin.com/in/gildardo-jair-zepeda-balderas](https://www.linkedin.com/in/gildardo-jair-zepeda-balderas-57695a258/)
+- **Correo**: gildardo_zepedabalderas@outlook.com
+
+<!-- EDITA: pon solo los medios que quieras hacer públicos. Todo lo que escribas aquí lo verá cualquiera en internet. -->

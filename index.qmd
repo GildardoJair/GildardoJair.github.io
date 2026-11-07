@@ -1,0 +1,62 @@
+---
+pagetitle: "Parámetro Z"
+page-layout: full
+toc: false
+css: portada.css
+---
+
+```{=html}
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+```
+
+::: {.hero}
+
+::: {.hero-text}
+[Ciencia de datos · AURA-BUAP]{.kicker}
+
+# Hola, mucho gusto. Soy [Gildardo]{.name}. {.unnumbered}
+
+Soy **físico** egresado de la **BUAP** y trabajo como investigador en **Ciencia de Datos** en la agencia de inteligencia artificial y ética algorítmica **AURA-BUAP**.
+
+Este es mi blog personal, donde muestro mis proyectos e investigaciones. Espero que este conocimiento te sea de utilidad :)
+
+::: {.eq}
+$$
+z = \frac{\lambda_{\text{obs}} - \lambda_{\text{emit}}}{\lambda_{\text{emit}}}
+$$
+
+[lo que cambia al mirar desde otro punto]{.frase}
+:::
+
+:::
+
+```{=html}
+<!-- EDITA: para poner tu foto, guarda la imagen como images/foto.jpg y
+     reemplaza TODO el contenido del <div> interior por:
+     <img src="images/foto.jpg" alt="Gildardo Zepeda"> -->
+<div class="photo" role="img" aria-label="Espacio para tu foto de perfil">
+  <div>
+    <span>
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="32" cy="24" r="11"/><path d="M9 58c2-14 12-20 23-20s21 6 23 20"/></svg>
+      TU FOTO AQUÍ
+    </span>
+  </div>
+</div>
+```
+
+:::
+
+```{=html}
+<section class="cards" aria-label="Secciones del sitio">
+  <a class="sec" href="proyectos.html"><small>Hacer</small><h3>Proyectos</h3><p>Problema, método y resultado, explicados con calma.</p></a>
+  <a class="sec" href="investigaciones.html"><small>Publicar</small><h3>Investigaciones</h3><p>Mis papers, publicados y en preparación.</p></a>
+  <a class="sec" href="blog.html"><small>Escribir</small><h3>Blog</h3><p>Notas con código y ecuaciones de lo que voy aprendiendo.</p></a>
+  <a class="sec" href="contacto.html"><small>Hablar</small><h3>Contacto</h3><p>Correo y redes para escribirme.</p></a>
+</section>
+```
+
+::: {.herramientas}
+Python · Jupyter · NumPy · pandas · scikit-learn · Git
+:::
+
+<!-- EDITA: deja solo las herramientas que realmente usas y agrega las demás -->

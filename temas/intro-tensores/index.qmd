@@ -1,0 +1,44 @@
+---
+title: "Breve introducción a los tensores"
+description: "Qué es un tensor en el contexto del aprendizaje automático y cómo manipularlo con NumPy."
+date: 2026-11-08
+categories: [Machine Learning, Matemáticas]
+---
+
+Este es un tema de ejemplo. Reemplaza el contenido con el tuyo.
+
+## Idea central
+
+En aprendizaje automático, un **tensor** es un arreglo de números con $k$ índices. El número de índices es su *orden*:
+
+| Orden | Objeto | Ejemplo |
+|---|---|---|
+| 0 | escalar | una pérdida $L$ |
+| 1 | vector | un embedding $\mathbf{x}\in\mathbb{R}^d$ |
+| 2 | matriz | una imagen en grises $W\in\mathbb{R}^{m\times n}$ |
+| 3 | tensor | una imagen a color $\mathbb{R}^{H\times W\times 3}$ |
+
+## Una operación básica
+
+La contracción de un tensor con un vector es la base de una capa lineal:
+
+$$
+y_i = \sum_j W_{ij}\,x_j + b_i
+$$
+
+## En código
+
+```python
+import numpy as np
+
+W = np.random.randn(3, 4)   # matriz 3x4
+x = np.random.randn(4)      # vector de 4 componentes
+b = np.zeros(3)
+
+y = W @ x + b               # y_i = sum_j W_ij x_j + b_i
+print(y.shape)              # (3,)
+```
+
+## Para seguir
+
+Siguiente tema: redes neuronales como composición de capas lineales y no linealidades.

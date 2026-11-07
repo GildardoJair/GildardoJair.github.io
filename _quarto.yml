@@ -1,0 +1,92 @@
+project:
+  type: website
+  output-dir: _site
+
+lang: es
+
+website:
+  title: "Parámetro Z"
+  description: "Proyectos, investigaciones y notas de ciencia de datos de Gildardo Zepeda"
+  search:
+    location: navbar
+    type: textbox
+  navbar:
+    title: "Parámetro <span class='z'>Z</span>"
+    background: dark
+    left:
+      - text: "Inicio"
+        href: index.qmd
+      - text: "Proyectos"
+        href: proyectos.qmd
+      - text: "Investigaciones"
+        href: investigaciones.qmd
+      - text: "Temas"
+        menu:
+          - text: "Todos los temas"
+            href: temas.qmd
+          - text: "Machine Learning"
+            href: "temas.qmd#category=Machine%20Learning"
+          - text: "IA"
+            href: "temas.qmd#category=IA"
+          - text: "Física"
+            href: "temas.qmd#category=F%C3%ADsica"
+          - text: "Matemáticas"
+            href: "temas.qmd#category=Matem%C3%A1ticas"
+          - text: "Probabilidad"
+            href: "temas.qmd#category=Probabilidad"
+          # EDITA: para agregar un área nueva, copia dos líneas (text y href)
+          # y usa el mismo nombre que pondrás en "categories" de tus temas.
+      - text: "Blog"
+        href: blog.qmd
+      - text: "Contacto"
+        href: contacto.qmd
+    tools:
+      - icon: github
+        text: GitHub
+        href: https://github.com/GildardoJair
+      - icon: linkedin
+        text: LinkedIn
+        href: https://www.linkedin.com/in/gildardo-jair-zepeda-balderas-57695a258/
+      - icon: instagram
+        text: Instagram
+        href: "#"   # EDITA: pon aquí la URL de tu Instagram
+      - icon: youtube
+        text: YouTube
+        href: "#"   # EDITA: pon aquí la URL de tu canal de YouTube
+      - icon: envelope
+        text: Correo
+        href: mailto:gildardo_zepedabalderas@outlook.com
+  page-footer:
+    center: "© 2026 Gildardo Zepeda · Parámetro Z · Hecho con [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: [darkly, styles.scss]
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap">
+    highlight-style: monokai
+    toc: true
+    toc-title: "En esta página"
+    code-copy: true
+    smooth-scroll: true
+
+# Comentarios y reacciones (Giscus). Están apagados a propósito.
+# Actívalos DESPUÉS de publicar el sitio en GitHub. Pasos:
+#   1. Repositorio público, con "Discussions" activadas (Settings → Features).
+#   2. Instala la app de Giscus: https://github.com/apps/giscus
+#   3. Obtén tus ids en https://giscus.app y quita el "#" de las líneas de abajo.
+# Para que solo salgan en el blog, ponlo en posts/_metadata.yml en vez de aquí.
+#
+#   comments:
+#     giscus:
+#       repo: GildardoJair/mi-sitio
+#       language: es
+#       theme: dark
+
+# "freeze: auto" guarda los resultados de código ya ejecutado en la carpeta _freeze/,
+# así el servidor de GitHub no necesita reejecutar tus notebooks al publicar.
+execute:
+  freeze: auto
