@@ -6,6 +6,9 @@ lang: es
 
 website:
   title: "Parámetro Z"
+  site-url: "https://gildardojair.github.io"
+  open-graph: true
+  twitter-card: true
   description: "Proyectos, investigaciones y notas de ciencia de datos de Gildardo Zepeda"
   search:
     location: navbar
@@ -64,6 +67,7 @@ format:
     theme: [darkly, styles.scss]
     include-in-header:
       text: |
+        <meta name="google-site-verification" content="E7kQZg0LWOvZHlcDAv50gAYtoinVRgtafT8MKONhur8" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap">
