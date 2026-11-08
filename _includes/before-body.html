@@ -1,0 +1,17 @@
+<!-- Se incluye al inicio de TODAS las páginas: lienzo de estrellas y el dibujo por defecto de las tarjetas sin imagen. -->
+<canvas id="pz-stars" aria-hidden="true"></canvas>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<pattern id="hat" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5" stroke="#2b2a4a" stroke-width="1" opacity=".55"/></pattern>
+<symbol id="calc" viewBox="0 0 320 180">
+  <g class="inks"><path d="M176 118 H308 m-8 -4 l8 4 l-8 4"/><path d="M186 130 V20 m-4 8 l4 -8 l4 8"/></g>
+  <path d="M215 118 L215 77.5 Q238 50.5 261 77.5 L261 118 Z" fill="url(#hat)" stroke="none"/>
+  <path class="inks" style="stroke-width:2.2" d="M192 118 Q238 10 284 118"/>
+  <path class="inks" style="stroke-dasharray:4 4" d="M189 108 L241 47"/>
+  <circle cx="215" cy="77.5" r="2.6" fill="#2b2a4a" opacity=".85"/>
+  <g class="ink" font-size="17"><text x="246" y="46">f'(x)</text><text x="264" y="62">f(x)</text><text x="290" y="112">x</text><text x="192" y="30">y</text><text x="212" y="136">&#8747; f dx</text></g>
+  <g class="ink" font-size="24"><text x="14" y="38" transform="rotate(-2 14 38)">f(x) = c - x&#178;</text><text x="14" y="76">f'(x) = -2x</text></g>
+  <g class="ink" font-size="21"><text x="14" y="114">&#8747; f dx = cx - x&#179;/3</text></g>
+  <path class="inks" d="M14 44 q 60 6 130 -2"/>
+  <g class="ink" font-size="17"><text x="16" y="152" transform="rotate(-3 16 152)">pendiente y &#225;rea</text></g>
+  <path class="inks" d="M14 158 q 50 5 100 -2"/>
+</symbol></defs></svg>

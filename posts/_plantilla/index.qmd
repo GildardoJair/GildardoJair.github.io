@@ -1,0 +1,29 @@
+---
+title: "Título de la nota"
+description: "Resumen de una línea (aparece en la tarjeta)"
+date: 2026-11-20
+categories: [personal]
+# image: figura.png    # Opcional: pon la imagen en esta misma carpeta.
+#                      # Sin imagen, la tarjeta muestra el dibujo por defecto (función, derivada e integral).
+---
+
+Escribe aquí tu nota. Las ecuaciones van en LaTeX: en línea $E = mc^2$ y en bloque:
+
+$$
+\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+$$
+
+## Una sección
+
+Texto, listas, tablas y código:
+
+```python
+print("Hola, Parámetro Z")
+```
+
+<!--
+CÓMO USAR ESTA PLANTILLA
+1. Copia la carpeta _plantilla y ponle otro nombre, por ejemplo posts/mi-nota/ (sin guion bajo al inicio).
+2. Edita el encabezado de arriba y escribe tu nota.
+3. Las carpetas que empiezan con "_" no se publican, así que esta plantilla nunca aparece en el sitio.
+-->

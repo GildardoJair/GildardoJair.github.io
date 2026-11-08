@@ -3,15 +3,20 @@ pagetitle: "Parámetro Z"
 page-layout: full
 toc: false
 css: portada.css
+listing:
+  - id: novedades
+    contents: [posts, temas]
+    type: grid
+    sort: "date desc"
+    max-items: 8
+    image-height: 150px
+    categories: false
+    fields: [image, date, title, description]
 ---
-
-```{=html}
-<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-```
 
 ::: {.hero}
 
-::: {.hero-text}
+::: {.txt}
 [Ciencia de datos · AURA-BUAP]{.kicker}
 
 # Hola, mucho gusto. Soy [Gildardo]{.name}. {.unnumbered}
@@ -19,41 +24,71 @@ css: portada.css
 Soy **físico** egresado de la **BUAP** y trabajo como investigador en **Ciencia de Datos** en la agencia de inteligencia artificial y ética algorítmica **AURA-BUAP**.
 
 Este es mi blog personal, donde muestro mis proyectos e investigaciones. Espero que este conocimiento te sea de utilidad :)
-
-::: {.eq}
-$$
-z = \frac{\lambda_{\text{obs}} - \lambda_{\text{emit}}}{\lambda_{\text{emit}}}
-$$
-
-[lo que cambia al mirar desde otro punto]{.frase}
-:::
-
 :::
 
 ```{=html}
 <!-- EDITA: para poner tu foto, guarda la imagen como images/foto.jpg y
      reemplaza TODO el contenido del <div> interior por:
      <img src="images/foto.jpg" alt="Gildardo Zepeda"> -->
-<div class="photo" role="img" aria-label="Espacio para tu foto de perfil">
-  <div>
-    <span>
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="32" cy="24" r="11"/><path d="M9 58c2-14 12-20 23-20s21 6 23 20"/></svg>
-      TU FOTO AQUÍ
-    </span>
+<div class="side">
+  <div class="photo" role="img" aria-label="Espacio para tu foto de perfil">
+    <div>
+      <span>
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="32" cy="24" r="11"/><path d="M9 58c2-14 12-20 23-20s21 6 23 20"/></svg>
+        tu foto aquí
+      </span>
+    </div>
   </div>
 </div>
+<div class="scene-home" data-scene="puebla" aria-hidden="true"></div>
 ```
 
 :::
 
-```{=html}
-<section class="cards" aria-label="Secciones del sitio">
-  <a class="sec" href="proyectos.html"><small>Hacer</small><h3>Proyectos</h3><p>Problema, método y resultado, explicados con calma.</p></a>
-  <a class="sec" href="investigaciones.html"><small>Publicar</small><h3>Investigaciones</h3><p>Mis papers, publicados y en preparación.</p></a>
-  <a class="sec" href="blog.html"><small>Escribir</small><h3>Blog</h3><p>Notas con código y ecuaciones de lo que voy aprendiendo.</p></a>
-  <a class="sec" href="contacto.html"><small>Hablar</small><h3>Contacto</h3><p>Correo y redes para escribirme.</p></a>
-</section>
-```
+::: {.mesa data-vacio="Aquí aparecerán mis últimas publicaciones."}
+
+## Novedades {.unnumbered}
+
+::: {#novedades}
+:::
+
+:::
+
+## Acerca de mí {.unnumbered .acerca-titulo}
+
+::: {.acerca}
+
+::: {.acerca-texto}
+Soy **Lic. Gildardo Jair Zepeda Balderas**, egresado de Física por la BUAP. Mi camino va de la física a la ciencia de datos: he colaborado científicamente con instituciones como la **UDLAP** y el **INAOE** en machine learning aplicado a visión por computadora, y he sido asistente de investigadores **SNI-II**.
+
+Hoy trabajo en **AURA-BUAP**, la agencia de inteligencia artificial y ética algorítmica de la BUAP, como investigador en ciencia de datos.
+
+Me especializo en técnicas de reducción de dimensión, teoría del transporte óptimo, machine learning, IA, modelos predictivos y programación. He desarrollado agentes de inteligencia artificial, entrenado redes neuronales convolucionales y trabajado en la limpieza, exploración y preparación de datos.
+:::
+
+::: {.acerca-datos}
+**Formación**
+
+- Licenciatura en Física, BUAP
+- Diplomado en Ciencia de Datos <!-- EDITA: agrega la institución -->
+- Dos estancias de investigación
+
+**Experiencia**
+
+- Investigador en Ciencia de Datos, AURA-BUAP
+- Colaboración científica con UDLAP e INAOE
+- Asistente de investigadores SNI-II
+
+**Áreas**
+
+- Reducción de dimensión
+- Transporte óptimo
+- Machine learning e IA
+- Visión por computadora
+- Modelos predictivos
+:::
+
+:::
 
 ::: {.herramientas}
 Python · Jupyter · NumPy · pandas · scikit-learn · Git

@@ -1,0 +1,29 @@
+---
+title: "Título descriptivo del proyecto"
+description: "Qué problema resuelve, en una línea"
+date: 2026-11-20
+categories: [Visión por computadora]
+# image: resultado.png   # Opcional: una gráfica o captura del resultado.
+---
+
+## Problema
+
+¿Qué pregunta o necesidad querías resolver? Una o dos frases.
+
+## Método
+
+¿Qué datos usaste y qué técnicas aplicaste? Por ejemplo: limpieza con pandas, un modelo de regresión, validación cruzada.
+
+## Resultado
+
+¿Qué encontraste? Incluye una gráfica o una métrica concreta.
+
+## Enlaces
+
+[Repositorio](https://github.com/GildardoJair/nombre-del-repo) · [Notebook](https://example.com)
+
+<!--
+CÓMO USAR ESTA PLANTILLA
+1. Copia esta carpeta con otro nombre, por ejemplo proyectos/clasificador-imagenes/ (sin guion bajo al inicio).
+2. Edita el encabezado y el contenido. El proyecto aparece solo como tarjeta en la página Proyectos.
+-->

@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - assets/site.js
+    - assets/noise-paper.svg
+    - assets/noise-wood.svg
 
 lang: es
 
@@ -10,9 +14,38 @@ website:
   open-graph: true
   twitter-card: true
   description: "Proyectos, investigaciones y notas de ciencia de datos de Gildardo Zepeda"
+  page-navigation: true
   search:
     location: navbar
     type: textbox
+  # Temario lateral: aparece solo en las páginas de temas/ (ver temas/_metadata.yml).
+  # Cada área es una carpeta con sus temas numerados: temas/machine-learning/01-tensores/index.qmd
+  # El número del nombre de la carpeta define el orden del temario y de los botones anterior/siguiente.
+  sidebar:
+    - id: temas
+      title: "Temario"
+      style: docked
+      search: false
+      collapse-level: 2
+      contents:
+        - text: "Todos los temas"
+          href: temas.qmd
+        - section: "Machine Learning"
+          contents:
+            - auto: "temas/machine-learning/*/index.qmd"
+        # EDITA: cuando crees temas de otra área, quita el "#" de su bloque.
+        # - section: "IA"
+        #   contents:
+        #     - auto: "temas/ia/*/index.qmd"
+        # - section: "Física"
+        #   contents:
+        #     - auto: "temas/fisica/*/index.qmd"
+        # - section: "Matemáticas"
+        #   contents:
+        #     - auto: "temas/matematicas/*/index.qmd"
+        # - section: "Probabilidad"
+        #   contents:
+        #     - auto: "temas/probabilidad/*/index.qmd"
   navbar:
     title: "Parámetro <span class='z'>Z</span>"
     background: dark
@@ -70,7 +103,11 @@ format:
         <meta name="google-site-verification" content="E7kQZg0LWOvZHlcDAv50gAYtoinVRgtafT8MKONhur8" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+    include-before-body: _includes/before-body.html
+    include-after-body:
+      - text: |
+          <script src="/assets/site.js" defer></script>
     highlight-style: monokai
     toc: true
     toc-title: "En esta página"

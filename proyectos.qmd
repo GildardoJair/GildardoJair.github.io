@@ -1,20 +1,29 @@
 ---
-title: "Proyectos"
+pagetitle: "Proyectos"
+page-layout: full
+toc: false
+listing:
+  - id: listado
+    contents: proyectos
+    type: grid
+    sort: "date desc"
+    image-height: 150px
+    categories: true
+    fields: [image, date, title, description]
 ---
 
-Cada proyecto sigue la misma estructura: **problema**, **método**, **resultado** y **enlaces**.
+::: {.shead .compacta}
+::: {.txt}
+[Hacer]{.kicker}
 
-<!--
-EDITA: copia este bloque debajo de esta nota por cada proyecto y quita los marcadores
-de comentario. Pocos y bien explicados valen más que muchos sin contexto.
+# Proyectos {.unnumbered}
 
-## Título descriptivo del proyecto
+Problema, método y resultado, explicados con calma.
+:::
+<div class="scene" data-scene="lab" aria-hidden="true"></div>
+:::
 
-**Problema.** ¿Qué pregunta o necesidad querías resolver? Una o dos frases.
-
-**Método.** ¿Qué datos usaste y qué técnicas aplicaste? Por ejemplo: limpieza con pandas, un modelo de regresión, validación cruzada.
-
-**Resultado.** ¿Qué encontraste? Incluye una gráfica o una métrica concreta.
-
-**Enlaces.** [Repositorio](https://github.com/GildardoJair/nombre-del-repo) · [Notebook](url-del-notebook)
--->
+::: {.mesa data-vacio="Aquí irán mis proyectos."}
+::: {#listado}
+:::
+:::

@@ -1,0 +1,2 @@
+# Todas las páginas dentro de temas/ muestran el temario lateral definido en _quarto.yml
+sidebar: temas

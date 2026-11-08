@@ -1,11 +1,24 @@
 ---
-title: "Investigaciones"
+pagetitle: "Investigaciones"
+page-layout: full
+toc: false
 bibliography: referencias.bib
 nocite: |
   @*
 ---
 
-Mis artículos científicos, publicados y en preparación. La lista se genera sola desde el archivo `referencias.bib`.
+::: {.shead .compacta}
+::: {.txt}
+[Publicar]{.kicker}
 
+# Investigaciones {.unnumbered}
+
+Papers publicados, en revisión y en preparación. La lista se genera sola desde el archivo `referencias.bib`.
+:::
+<div class="scene" data-scene="gtm" aria-hidden="true"></div>
+:::
+
+::: {.mesa data-vacio="Aquí aparecerán mis artículos."}
 ::: {#refs}
+:::
 :::

@@ -1,54 +1,73 @@
-/* Estilos SOLO de la portada (index.qmd): aurora animada, hero con foto y tarjetas. */
+/* Estilos SOLO de la portada (index.qmd): presentación con foto, volcanes, carrusel de Novedades y Acerca de mí. */
 
-:root {
-  --pz-green: #4ff0b0;
-  --pz-teal: #2bc4d9;
-  --pz-blue: #3a6df0;
-  --pz-violet: #8a6cf0;
-  --pz-line: rgba(143, 215, 200, 0.18);
-}
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 30px; align-items: center; min-height: 540px; padding: 48px 0 calc(12.1vw + 36px); }
+.hero .txt { position: relative; z-index: 2; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.06; margin: 0 0 18px; border: 0; }
+.hero h1 .name { color: var(--acc); }
+.hero p { max-width: 54ch; margin: 0 0 12px; color: rgba(233, 238, 242, 0.88); }
 
-/* En la portada la aurora reemplaza el fondo de puntos */
-body::before { display: none; }
-
-.aurora { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-.aurora i { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; }
-.aurora i:nth-child(1) { width: 60vw; height: 38vh; left: -10vw; top: -8vh; background: var(--pz-green); animation: pz-d1 18s ease-in-out infinite alternate; }
-.aurora i:nth-child(2) { width: 55vw; height: 34vh; left: 30vw; top: 2vh; background: var(--pz-teal); animation: pz-d2 22s ease-in-out infinite alternate; }
-.aurora i:nth-child(3) { width: 45vw; height: 30vh; right: -10vw; top: -6vh; background: var(--pz-blue); animation: pz-d1 26s ease-in-out infinite alternate-reverse; }
-.aurora i:nth-child(4) { width: 30vw; height: 22vh; left: 45vw; top: 14vh; background: var(--pz-violet); opacity: 0.28; animation: pz-d2 30s ease-in-out infinite alternate; }
-.aurora::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 10%, #050b14 62%); }
-@keyframes pz-d1 { to { transform: translate(8vw, 5vh) scale(1.15); } }
-@keyframes pz-d2 { to { transform: translate(-9vw, 7vh) scale(0.9); } }
-@media (prefers-reduced-motion: reduce) { .aurora i { animation: none; } }
-
-/* Hero */
-.hero { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 40px; align-items: center; padding: 56px 0 40px; }
-.hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.6rem); line-height: 1.04; font-weight: 600; margin: 0 0 22px; border: 0; }
-.hero h1 .name { color: #01D0A6; }
-.kicker { display: block; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pz-green); margin: 0 0 14px; }
-.hero p { max-width: 58ch; color: #cfe3df; }
-.hero .eq { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--pz-line); max-width: 58ch; color: var(--pz-teal); }
-.hero .eq mjx-container[display="true"] { text-align: left !important; margin: 0.4em 0 !important; }
-.hero .eq .frase { display: block; font-style: italic; color: #8fa7a8; margin-top: 2px; }
-
-/* Foto de perfil (marco con degradado) */
-.photo { width: 100%; max-width: 280px; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; padding: 5px; background: conic-gradient(from 200deg, var(--pz-green), var(--pz-teal), var(--pz-blue), var(--pz-violet), var(--pz-green)); }
-.photo > div { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #0a1626; display: grid; place-items: center; text-align: center; color: #8fa7a8; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.8rem; letter-spacing: 0.06em; padding: 20px; }
+/* Foto de perfil con marco dorado */
+.side { position: relative; width: 280px; height: 280px; justify-self: center; z-index: 2; }
+.photo { position: absolute; inset: 30px; border-radius: 50%; padding: 4px; background: linear-gradient(160deg, var(--acc), rgba(233, 201, 143, 0.15)); }
+.photo > div { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; display: grid; place-items: center; text-align: center; background: #060d19; color: var(--muted); font-style: italic; font-size: 1rem; padding: 16px; }
 .photo img { width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; }
-.photo svg { width: 64px; display: block; margin: 0 auto 10px; }
+.photo svg { width: 54px; display: block; margin: 0 auto 6px; }
 
-/* Tarjetas de secciones */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin: 8px 0 32px; }
-.cards a.sec { display: block; text-decoration: none; color: inherit; padding: 22px; border: 1px solid var(--pz-line); border-radius: 6px; background: linear-gradient(160deg, rgba(20, 48, 60, 0.55), rgba(8, 18, 32, 0.7)); transition: border-color 0.2s, transform 0.2s; }
-.cards a.sec:hover, .cards a.sec:focus-visible { border-color: var(--pz-green); transform: translateY(-3px); outline: none; }
-.cards small { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pz-teal); }
-.cards h3 { font-family: "Fraunces", Georgia, serif; font-size: 1.5rem; margin: 6px 0 8px; border: 0; padding: 0; }
-.cards p { margin: 0; font-size: 1.1rem; line-height: 1.5; color: #8fa7a8; }
-
-.herramientas { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.9rem; color: #8fa7a8; }
-
-@media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; padding-top: 32px; }
-  .photo { order: -1; max-width: 200px; margin: 0; }
+/* Volcanes: Popocatépetl y Iztaccíhuatl al fondo de la presentación */
+.scene-home { position: absolute; left: 50%; margin-left: -50vw; width: 100vw; bottom: 0; height: calc(17.5vw + 60px); overflow: hidden; pointer-events: none; z-index: 1; }
+.scene-home::before { content: ""; position: absolute; inset: 0; background: radial-gradient(55% 90% at 30% 100%, rgba(226, 150, 110, 0.34), transparent 72%), linear-gradient(to top, rgba(70, 110, 140, 0.28), transparent 70%); }
+.scene-home svg { position: absolute; left: 50%; bottom: 0; width: 100vw; height: 17.5vw; transform: translateX(-50%); display: block; }
+@media (max-width: 899px) {
+  .scene-home { height: 200px; }
+  .scene-home svg { width: 800px; height: 140px; transform: translateX(-35%); }
+  .hero { padding-bottom: 130px; }
 }
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; padding-top: 28px; min-height: 0; }
+  .side { order: -1; width: 220px; height: 220px; justify-self: start; }
+  .photo { inset: 20px; }
+}
+
+/* Carrusel de Novedades dentro de la mesa */
+.pz-carousel { position: relative; }
+.pz-carousel .quarto-listing .list.grid { display: flex !important; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 14px 10px 26px; scrollbar-width: none; position: relative; }
+.pz-carousel .list.grid::-webkit-scrollbar { display: none; }
+.pz-carousel .list.grid > .g-col-1 { flex: 0 0 min(290px, 80%); scroll-snap-align: start; }
+
+.pz-arrow { position: absolute; top: 50%; z-index: 3; margin-top: -30px; width: 44px; height: 44px; font-family: var(--f-title); font-size: 1.5rem; font-weight: 600; line-height: 1; padding: 0 0 3px; cursor: pointer; color: #3a2508; border: 1px solid #4a3010; border-radius: 50%;
+  background: radial-gradient(circle at 32% 26%, #fbeeb4 0 12%, transparent 40%), linear-gradient(145deg, #f0d584, #c9a24c 48%, #8f6a22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), inset 0 -3px 4px rgba(80, 50, 5, 0.55), 0 0 0 2px rgba(30, 16, 4, 0.55), 0 0 0 4px rgba(224, 194, 122, 0.45), 0 4px 8px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 1px 0 rgba(255, 235, 170, 0.7); transition: filter 0.2s, transform 0.2s; }
+.pz-arrow.l { left: -24px; }
+.pz-arrow.r { right: -24px; }
+.pz-arrow:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.pz-arrow:active { transform: translateY(1px); filter: brightness(0.95); }
+.pz-arrow:disabled { opacity: 0.5; filter: saturate(0.55) brightness(0.8); transform: none; cursor: default; }
+.pz-arrow:focus-visible { outline: 2px solid #fff3c4; outline-offset: 5px; }
+@media (hover: none) and (pointer: coarse) { .pz-arrow { display: none; } }
+@media (max-width: 800px) { .pz-arrow { width: 38px; height: 38px; font-size: 1.3rem; margin-top: -26px; } .pz-arrow.l { left: -16px; } .pz-arrow.r { right: -16px; } }
+
+.pz-dots { display: flex; justify-content: center; gap: 10px; padding: 2px 0 12px; }
+.pz-dots button { width: 10px; height: 10px; padding: 0; border-radius: 5px; border: 1px solid #e0c27a; background: rgba(30, 18, 8, 0.5); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); cursor: pointer; transition: width 0.25s, background 0.25s; }
+.pz-dots button[aria-current="true"] { width: 24px; border-color: #4a3010; background: linear-gradient(145deg, #f0d584, #c9a24c 55%, #8f6a22); }
+.pz-dots button:hover { background: #c9a24c; }
+.pz-dots button:focus-visible { outline: 2px solid #fff3c4; outline-offset: 3px; }
+
+/* Última tarjeta del carrusel: tapa de libro de cuero */
+.pz-more { display: flex; }
+.pz-book { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; text-align: center; min-height: 220px; padding: 16px; border-radius: 3px; border: 1px solid rgba(224, 194, 122, 0.55);
+  background: linear-gradient(160deg, #4a2c18, #2e1a0d); box-shadow: 0 9px 18px rgba(0, 0, 0, 0.6), inset 0 0 0 5px rgba(0, 0, 0, 0.25), inset 0 0 0 6px rgba(224, 194, 122, 0.4); }
+.pz-book span { font-family: var(--f-title); font-size: 1.3rem; color: #e0c27a; }
+.pz-book a { font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: #f0d584; text-decoration: none; border: 1px solid rgba(224, 194, 122, 0.5); border-radius: 999px; padding: 1px 16px; }
+.pz-book a:hover { background: rgba(224, 194, 122, 0.15); }
+
+/* Acerca de mí */
+.acerca-titulo { margin-top: 36px; }
+.acerca { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 36px; align-items: start; margin-bottom: 30px; }
+.acerca-texto p { max-width: 60ch; margin: 0 0 14px; }
+.acerca-datos { padding: 18px 22px; background: rgba(255, 255, 255, 0.035); border: 1px solid var(--line); border-radius: 4px; font-size: 1.05rem; line-height: 1.5; }
+.acerca-datos p { margin: 0 0 4px; font-variant-caps: all-small-caps; letter-spacing: 0.12em; color: var(--acc); font-size: 1.05rem; }
+.acerca-datos ul { margin: 0 0 14px; padding-left: 1.1em; }
+.acerca-datos ul:last-child { margin-bottom: 0; }
+@media (max-width: 800px) { .acerca { grid-template-columns: 1fr; } }
+.herramientas { font-style: italic; color: var(--muted); font-size: 1.05rem; }

@@ -1,0 +1,33 @@
+---
+title: "Título del tema"
+description: "Qué se aprende en este tema, en una línea"
+date: 2026-11-20
+categories: [Machine Learning]   # Áreas: Machine Learning, IA, Física, Matemáticas, Probabilidad
+# image: figura.png              # Opcional. Sin imagen se muestra el dibujo por defecto.
+---
+
+## Idea central
+
+Explica el concepto con calma. Ecuaciones en LaTeX: $y = f(x)$.
+
+## Un ejemplo
+
+```python
+import numpy as np
+x = np.linspace(0, 1, 5)
+print(x)
+```
+
+## Para seguir
+
+Enlaza con el siguiente tema.
+
+<!--
+CÓMO USAR ESTA PLANTILLA
+1. Copia esta carpeta DENTRO de su área, con un número al inicio del nombre:
+      temas/machine-learning/02-redes-neuronales/
+   El número define el orden en el temario lateral y en los botones anterior / siguiente.
+2. Áreas con carpeta: machine-learning, ia, fisica, matematicas, probabilidad.
+   Si usas un área que aún no está en el temario, quita el "#" de su bloque en _quarto.yml.
+3. "categories" (arriba) controla los filtros de la página Temas; puede tener varias áreas.
+-->

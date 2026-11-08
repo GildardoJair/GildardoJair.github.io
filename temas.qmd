@@ -1,12 +1,28 @@
 ---
-title: "Temas"
-listing:
-  contents: temas
-  sort: "date desc"
-  type: default
-  categories: true
-  fields: [date, title, description, categories]
+pagetitle: "Temas"
 page-layout: full
+toc: false
+sidebar: false
+listing:
+  - id: listado
+    contents: temas
+    type: default
+    sort: "date desc"
+    categories: true
+    fields: [date, title, description, categories]
 ---
 
+::: {.shead .sinescena}
+::: {.txt}
+[Aprender]{.kicker}
+
+# Temas {.unnumbered}
+
 Explicaciones de machine learning, IA, física, matemáticas y probabilidad. Usa las categorías para filtrar por área.
+:::
+:::
+
+::: {.mesa .fichas data-vacio="Aquí irán mis temas."}
+::: {#listado}
+:::
+:::

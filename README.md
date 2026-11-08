@@ -1,71 +1,64 @@
-# Mi sitio web (Quarto + GitHub Pages)
+# Parámetro Z · sitio personal (Quarto + GitHub Pages)
 
-Portafolio de ciencia de datos hecho con [Quarto](https://quarto.org).
+Portafolio y blog de ciencia de datos hecho con [Quarto](https://quarto.org). Publicado en https://gildardojair.github.io
 
 ## Estructura
 
 ```
 mi-sitio/
-├── _quarto.yml          # Configuración: título, menú, tema
-├── index.qmd            # Página de inicio
-├── proyectos.qmd        # Tus proyectos
-├── blog.qmd             # Lista automática de las notas en posts/
-├── contacto.qmd         # Enlaces de contacto
-├── styles.scss          # Colores, tipografía y fondo (todo el sitio)
-├── portada.css          # Estilos solo de la portada (aurora, foto, tarjetas)
-├── investigaciones.qmd  # Lista de papers generada desde referencias.bib
+├── _quarto.yml          # Título, menú, redes, temario lateral y opciones generales
+├── styles.scss          # Colores, tipografía, barra superior, mesa de madera, tarjetas de papel
+├── portada.css          # Estilos solo de la portada (foto, volcanes, carrusel, acerca de mí)
+├── assets/site.js       # Estrellas, escenas ilustradas, dibujo por defecto y carrusel
+├── assets/*.svg         # Texturas de papel y madera
+├── _includes/           # Lienzo de estrellas y dibujo por defecto (se incluye en todas las páginas)
+├── index.qmd            # Portada
+├── proyectos.qmd        # Listado de proyectos (tarjetas)   ← proyectos/<nombre>/index.qmd
+├── investigaciones.qmd  # Lista de papers desde referencias.bib
+├── temas.qmd            # Listado de temas con filtro por área  ← temas/<area>/NN-nombre/index.qmd
+├── blog.qmd             # Listado del blog                    ← posts/<nombre>/index.qmd
+├── contacto.qmd         # Contacto
 ├── referencias.bib      # Tus papers (una entrada por paper)
-├── posts/
-│   └── primera-nota/
-│       └── index.qmd    # Cada carpeta con un index.qmd es una entrada del blog
-└── .github/workflows/
-    └── publish.yml      # Publicación automática en GitHub Pages
+└── .github/workflows/publish.yml   # Publicación automática en GitHub Pages
 ```
 
-## 1. Probarlo en tu computadora
+## Cómo agregar contenido
 
-1. Instala Quarto desde <https://quarto.org/docs/get-started/>.
-2. En la carpeta del sitio, ejecuta:
+Cada sección tiene una carpeta `_plantilla` (las carpetas que empiezan con `_` no se publican). Cópiala con otro nombre y edita el encabezado.
 
-   ```bash
-   quarto preview
-   ```
+| Quiero publicar... | Qué hago |
+|---|---|
+| Una nota de blog | Copia `posts/_plantilla` a `posts/mi-nota/` |
+| Un tema | Copia `temas/_plantilla` a `temas/<area>/NN-nombre/` (el número define el orden del temario) |
+| Un proyecto | Copia `proyectos/_plantilla` a `proyectos/mi-proyecto/` |
+| Un paper | Pega la entrada BibTeX en `referencias.bib` |
 
-   Se abre el sitio en tu navegador y se actualiza solo al guardar cambios. Nadie más lo ve.
+- **Imagen de la tarjeta:** pon `image: figura.png` en el encabezado (la imagen va en la misma carpeta). Si no hay imagen, la tarjeta muestra un dibujo por defecto.
+- **Áreas de Temas:** machine-learning, ia, fisica, matematicas, probabilidad. Para que una área nueva aparezca en el temario lateral, quita el `#` de su bloque en `_quarto.yml`.
+- **Novedades de la portada:** se llenan solas con las 8 publicaciones más recientes de `posts/` y `temas/`.
 
-## 2. Personalizarlo
-
-Busca `TU-USUARIO`, `TU-PERFIL`, `tu-correo` y los comentarios `EDITA` en los archivos y reemplázalos con tus datos. Para encontrarlos todos de una vez:
+## Probarlo en tu computadora
 
 ```bash
-grep -rn "TU-\|EDITA\|tu-correo" --include="*.qmd" --include="*.yml" .
+quarto preview
 ```
 
-## 3. Publicarlo en GitHub Pages
+Se abre el sitio en el navegador y se actualiza al guardar. Nadie más lo ve.
 
-1. En GitHub, crea un repositorio nuevo (por ejemplo `mi-sitio`; si lo llamas `TU-USUARIO.github.io` tu sitio quedará en la raíz de esa dirección).
-2. Sube el proyecto:
+## Publicar
 
-   ```bash
-   git init
-   git add .
-   git commit -m "Primer commit"
-   git branch -M main
-   git remote add origin https://github.com/TU-USUARIO/mi-sitio.git
-   git push -u origin main
-   ```
+```bash
+git add .
+git commit -m "Describe tu cambio"
+git push
+```
 
-3. En el repositorio: **Settings → Pages → Source: GitHub Actions**.
-4. Cada `git push` a `main` ejecuta `.github/workflows/publish.yml`, que construye y publica el sitio. Puedes ver el progreso en la pestaña **Actions**.
+Cada `git push` a `main` ejecuta `.github/workflows/publish.yml`, que construye y publica el sitio en unos minutos.
 
-> Recuerda: el sitio publicado y el repositorio (con la cuenta gratuita) son **públicos**. No subas contraseñas, claves ni datos que no puedas compartir.
+> El sitio y el repositorio son **públicos**. No subas contraseñas, claves ni datos que no puedas compartir.
 
-## 4. Ejecutar código en tus notas
+## Pendientes y detalles
 
-Si en una nota escribes un bloque con `{python}` en lugar de `python`, Quarto ejecuta el código y muestra el resultado. Para que funcione:
-
-1. Renderiza **en tu computadora** (necesitas Python y `jupyter` instalados): `quarto render`.
-2. Haz commit de la carpeta `_freeze/` que se genera. Ahí quedan guardados los resultados.
-3. Al hacer push, GitHub usa esos resultados guardados y no necesita reejecutar tu código.
-
-Si cambias el código de una nota, vuelve a renderizar localmente antes de hacer push.
+- Foto de perfil: guarda `images/foto.jpg` y sigue la nota `EDITA` en `index.qmd`.
+- URLs de Instagram y YouTube: líneas `EDITA` en `_quarto.yml`.
+- Comentarios (Giscus): están apagados; las instrucciones están al final de `_quarto.yml`.
