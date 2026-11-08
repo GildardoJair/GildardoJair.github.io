@@ -12,7 +12,10 @@ website:
   title: "Parámetro Z"
   site-url: "https://gildardojair.github.io"
   open-graph: true
-  twitter-card: true
+  twitter-card:
+    card-style: summary_large_image
+    image: images/compartir.png
+  image: images/compartir.png
   description: "Proyectos, investigaciones y notas de ciencia de datos de Gildardo Zepeda"
   page-navigation: true
   search:

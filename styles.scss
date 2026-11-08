@@ -305,7 +305,7 @@ body.nav-fixed { padding-top: 0 !important; }
 div.sourceCode, pre.sourceCode { background: rgba(10, 16, 28, 0.92) !important; border: 1px solid var(--line); border-radius: 4px; }
 
 // Hoja de malla de puntos para los artículos (notas, temas y proyectos): páginas con bloque de título
-body:has(#title-block-header) main.content {
+body:has(#title-block-header.default) main.content {
   background: radial-gradient(circle, var(--dot) 1.2px, transparent 1.6px) 0 0 / 26px 26px, var(--sheet);
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -313,7 +313,7 @@ body:has(#title-block-header) main.content {
   margin-top: 16px;
   margin-bottom: 24px;
 }
-@media (max-width: 700px) { body:has(#title-block-header) main.content { padding: 18px 16px 22px; } }
+@media (max-width: 700px) { body:has(#title-block-header.default) main.content { padding: 18px 16px 22px; } }
 
 // ---------- Temario (barra lateral de Temas) y navegación anterior/siguiente ----------
 #quarto-sidebar { background: transparent; }
@@ -390,3 +390,15 @@ main.content.column-page-left { grid-column: page-start / page-end !important; }
 .breadcrumb a, .breadcrumb-item { color: var(--muted); }
 .breadcrumb-item.active { color: var(--fg); }
 .breadcrumb-item + .breadcrumb-item::before { color: var(--muted); }
+
+// ---------- Buscador (panel de resultados) en modo día ----------
+html[data-theme="day"] .aa-Panel, html[data-theme="day"] .aa-DetachedContainer, html[data-theme="day"] #quarto-search-results { background: #fafcfe !important; color: #1d2a3a !important; border: 1px solid rgba(29, 42, 58, 0.25) !important; }
+html[data-theme="day"] .aa-Panel .search-item, html[data-theme="day"] .aa-Panel .search-result-title, html[data-theme="day"] .aa-Panel .search-result-text, html[data-theme="day"] .aa-Panel .search-result-title-container, html[data-theme="day"] .aa-Panel .search-result-text-container { color: #1d2a3a !important; background: transparent !important; }
+html[data-theme="day"] .aa-Panel .search-result-section, html[data-theme="day"] .aa-Panel .search-result-doc-section, html[data-theme="day"] .aa-Panel .search-result-more, html[data-theme="day"] .aa-Panel .aa-SourceHeader { color: #53657a !important; }
+html[data-theme="day"] .aa-Panel li.aa-Item[aria-selected="true"] .search-item { background: #dbe7f4 !important; }
+html[data-theme="day"] .aa-Panel li.aa-Item[aria-selected="true"] .search-item * { background: transparent !important; color: #1d2a3a !important; }
+html[data-theme="day"] .aa-Panel .search-result-header, html[data-theme="day"] .aa-Panel .search-result-header-more, html[data-theme="day"] .aa-Panel .aa-SourceHeader { background: #eef3f8 !important; }
+html[data-theme="day"] .aa-Panel mark.search-match, html[data-theme="day"] .aa-Panel .search-match.mark { background: rgba(31, 95, 168, 0.25) !important; color: #1d2a3a !important; }
+html[data-theme="day"] .aa-Panel .search-result-icon, html[data-theme="day"] .aa-Panel .search-result-icon svg { color: #1f5fa8 !important; }
+
+// Los artículos son solo las páginas con bloque de título visible (los listados lo traen vacío)
