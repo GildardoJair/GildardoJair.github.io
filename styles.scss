@@ -35,6 +35,7 @@ $toc-color: $pz-acc;
 /*-- scss:rules --*/
 
 :root {
+  --dot: rgba(233, 201, 143, 0.34); --sheet: rgba(9, 16, 28, 0.9);
   --bg: #08111f; --fg: #e9eef2; --muted: #98a9b8; --acc: #e9c98f; --line: rgba(233, 238, 242, 0.16);
   --far: #13283d; --sil: #0a1424; --rim: rgba(255, 255, 255, 0.27);
   --glow: rgba(233, 201, 143, 0.3); --panel: rgba(8, 14, 24, 0.97); --field: rgba(0, 0, 0, 0.3);
@@ -44,6 +45,7 @@ $toc-color: $pz-acc;
 }
 // ---------- Tema de día (se activa con el botón sol/luna de la barra) ----------
 html[data-theme="day"] {
+  --dot: rgba(31, 95, 168, 0.28); --sheet: rgba(250, 252, 254, 0.88);
   --bg: #eaf2f7; --fg: #1d2a3a; --muted: #53657a; --acc: #1f5fa8; --line: rgba(29, 42, 58, 0.2);
   --far: #86a7c2; --sil: #243649; --rim: rgba(255, 255, 255, 0.45);
   --glow: rgba(255, 208, 120, 0.5); --panel: #f6f1e6; --field: rgba(255, 255, 255, 0.65);
@@ -301,6 +303,17 @@ body.nav-fixed { padding-top: 0 !important; }
 .quarto-title-meta-heading { font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: var(--acc); }
 .quarto-category { font-style: italic; font-size: 0.95rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; background: transparent; padding: 1px 12px; }
 div.sourceCode, pre.sourceCode { background: rgba(10, 16, 28, 0.92) !important; border: 1px solid var(--line); border-radius: 4px; }
+
+// Hoja de malla de puntos para los artículos (notas, temas y proyectos): páginas con bloque de título
+body:has(#title-block-header) main.content {
+  background: radial-gradient(circle, var(--dot) 1.2px, transparent 1.6px) 0 0 / 26px 26px, var(--sheet);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 26px 34px 30px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+@media (max-width: 700px) { body:has(#title-block-header) main.content { padding: 18px 16px 22px; } }
 
 // ---------- Temario (barra lateral de Temas) y navegación anterior/siguiente ----------
 #quarto-sidebar { background: transparent; }
