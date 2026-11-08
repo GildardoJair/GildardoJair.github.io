@@ -56,7 +56,7 @@
       '<path class="sf" d="M-1000 280 L-1000 236 L100 226 L280 206 L430 190 L570 156 L660 134 L760 124 L820 132 L910 162 L1050 198 L1190 218 L1300 228 L2200 236 L2200 280Z"/>' +
       '<path d="M570 156 L660 134 L760 124 L820 132 L910 162" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.6"/>' +
       '<g class="ss"><rect x="650" y="112" width="34" height="16" rx="2"/><rect x="690" y="118" width="22" height="12" rx="2"/><rect x="838" y="124" width="28" height="12" rx="2"/></g>' +
-      '<g style="filter:drop-shadow(0 0 7px rgba(235,242,255,.45))" transform="translate(790 126) scale(1.75)">' +
+      '<g class="dish" transform="translate(790 126) scale(1.75)">' +
       '<path class="ss" d="M-13 -6 L-20 22 H20 L13 -6 Z"/><path d="M-6 -4 V20 M6 -4 V20" stroke="rgba(255,255,255,.22)" stroke-width="1"/>' +
       '<g transform="rotate(-24 0 -8)"><path class="ss" d="M-32 -12 L-12 -2 M32 -12 L12 -2" stroke-width="5"/>' +
       '<ellipse class="ss" cx="3" cy="-5" rx="66" ry="27"/>' +
@@ -77,7 +77,7 @@
 
     /* Blog: cacomixtle sobre una rama, frente a la luna */
     cacomixtle: '<svg viewBox="0 0 1200 280" aria-hidden="true" preserveAspectRatio="xMidYMax meet"><defs><clipPath id="tl"><path d="M-50 -38 C-92 -42 -126 -66 -118 -100 C-112 -124 -88 -134 -70 -122 C-82 -118 -94 -108 -98 -98 C-104 -76 -80 -58 -52 -26 Z"/></clipPath></defs>' + FAR + G +
-      '<circle cx="640" cy="104" r="64" fill="var(--fg)" opacity=".92"/><circle cx="618" cy="86" r="10" fill="rgba(0,0,0,.10)"/><circle cx="662" cy="122" r="7" fill="rgba(0,0,0,.08)"/><circle cx="646" cy="76" r="5" fill="rgba(0,0,0,.08)"/>' +
+      '<circle class="moon" cx="640" cy="104" r="64"/><g class="mcr"><circle cx="618" cy="86" r="10" fill="rgba(0,0,0,.10)"/><circle cx="662" cy="122" r="7" fill="rgba(0,0,0,.08)"/><circle cx="646" cy="76" r="5" fill="rgba(0,0,0,.08)"/></g>' +
       '<path d="M-1000 186 C-300 188 200 196 560 174 C760 164 900 172 2200 168" fill="none" stroke="var(--sil)" stroke-width="10" stroke-linecap="round"/>' +
       '<g class="ss"><ellipse cx="180" cy="190" rx="22" ry="9" transform="rotate(-20 180 190)"/><ellipse cx="300" cy="196" rx="20" ry="8" transform="rotate(15 300 196)"/><ellipse cx="800" cy="168" rx="20" ry="8" transform="rotate(-18 800 168)"/><ellipse cx="980" cy="168" rx="22" ry="9" transform="rotate(14 980 168)"/></g>' +
       '<g transform="translate(500 172) scale(1.15)">' +
@@ -146,6 +146,23 @@
   if (catBox && firstMesa) {
     var holder = document.createElement('div'); holder.className = 'pz-chips';
     holder.appendChild(catBox); firstMesa.parentNode.insertBefore(holder, firstMesa);
+  }
+
+  /* ---------- 4c) Interruptor día / noche ---------- */
+  var root = document.documentElement;
+  var tools = document.querySelector('.quarto-navbar-tools') || document.querySelector('.navbar .navbar-container');
+  if (tools) {
+    var tb = document.createElement('button'); tb.type = 'button'; tb.className = 'pz-theme';
+    tb.innerHTML = '<svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>' +
+      '<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+    var label = function () { var d = root.getAttribute('data-theme') === 'day'; tb.setAttribute('aria-label', d ? 'Cambiar a modo noche' : 'Cambiar a modo día'); tb.title = d ? 'Modo noche' : 'Modo día'; };
+    tb.addEventListener('click', function () {
+      var day = root.getAttribute('data-theme') !== 'day';
+      if (day) root.setAttribute('data-theme', 'day'); else root.removeAttribute('data-theme');
+      try { localStorage.setItem('pz-theme', day ? 'day' : 'night'); } catch (e) {}
+      label();
+    });
+    tools.appendChild(tb); label();
   }
 
   /* ---------- 5) Listas vacías ---------- */
