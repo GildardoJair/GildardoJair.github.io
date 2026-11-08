@@ -17,8 +17,6 @@ listing:
 ::: {.hero}
 
 ::: {.txt}
-[Ciencia de datos · AURA-BUAP]{.kicker}
-
 # Hola, mucho gusto. Soy [Gildardo]{.name}. {.unnumbered}
 
 Soy **físico** egresado de la **BUAP** y trabajo como investigador en **Ciencia de Datos** en la agencia de inteligencia artificial y ética algorítmica **AURA-BUAP**.

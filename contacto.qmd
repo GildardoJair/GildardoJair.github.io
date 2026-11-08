@@ -6,8 +6,6 @@ toc: false
 
 ::: {.shead .sinescena}
 ::: {.txt}
-[Hablar]{.kicker}
-
 # Contacto {.unnumbered}
 
 Si quieres conversar sobre un proyecto, una colaboración o una duda, aquí me encuentras.

@@ -13,8 +13,6 @@ listing:
 
 ::: {.shead}
 ::: {.txt}
-[Escribir]{.kicker}
-
 # Blog {.unnumbered}
 
 Notas personales: experiencias, aprendizajes y reflexiones.

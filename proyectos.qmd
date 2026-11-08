@@ -14,8 +14,6 @@ listing:
 
 ::: {.shead .compacta}
 ::: {.txt}
-[Hacer]{.kicker}
-
 # Proyectos {.unnumbered}
 
 Problema, método y resultado, explicados con calma.

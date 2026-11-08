@@ -200,7 +200,7 @@ body.nav-fixed { padding-top: 0 !important; }
 .ink { font-family: "Caveat", "Segoe Print", cursive; font-weight: 600; fill: #2b2a4a; opacity: 0.88; }
 .inks { fill: none; stroke: #2b2a4a; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; opacity: 0.8; }
 
-.shead { --sh: clamp(200px, 23.3vw, 340px); position: relative; padding: 30px 0 calc(var(--sh) - 8px); }
+.shead { --sh: clamp(200px, 23.3vw, 340px); position: relative; padding: 12px 0 calc(var(--sh) - 8px); }
 .shead.compacta { --sh: clamp(140px, 15.5vw, 220px); }
 @media (max-width: 800px) { .shead.compacta { --sh: 130px; } }
 .shead .txt { position: relative; z-index: 2; }

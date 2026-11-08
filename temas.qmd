@@ -14,8 +14,6 @@ listing:
 
 ::: {.shead .sinescena}
 ::: {.txt}
-[Aprender]{.kicker}
-
 # Temas {.unnumbered}
 
 Explicaciones de machine learning, IA, física, matemáticas y probabilidad. Usa las categorías para filtrar por área.

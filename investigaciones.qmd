@@ -9,8 +9,6 @@ nocite: |
 
 ::: {.shead .compacta}
 ::: {.txt}
-[Publicar]{.kicker}
-
 # Investigaciones {.unnumbered}
 
 Papers publicados, en revisión y en preparación. La lista se genera sola desde el archivo `referencias.bib`.
